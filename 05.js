@@ -152,8 +152,9 @@ g(); */
 // setTimeout & setInterval
 // setTimeout()
 let timerID = setTimeout(() => console.log('Hello'), 1000);
-function sayHi (name) {
+function sayHi(name) {
     console.log(`Hello, ${name}`);
 }
 
 setTimeout(sayHi, 1000, 'John'); // Hello, John
+// make Git commit in the past
