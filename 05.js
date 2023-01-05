@@ -16,7 +16,7 @@ function pow(x, n) {
 } */
 
 // 递归求和
-let company = {
+/* let company = {
     // 是同一个对象，简洁起见被压缩了
     sales: [
         { name: 'John', salary: 1000 },
@@ -41,11 +41,11 @@ function sumSalaries(department) {
         }
         return sum;
     }
-}
+} */
 // console.log(sumSalaries(company));
 
 // 递归反向输出链表
-let list = {
+/* let list = {
     value: 1,
     next: {
         value: 2,
@@ -59,7 +59,7 @@ let list = {
     },
 };
 
-function printReverseLinkedList (list) {
+function printReverseLinkedList(list) {
     if (list.next) {
         printReverseLinkedList(list.next);
     }
@@ -69,7 +69,7 @@ function printReverseLinkedList (list) {
 // printReverseLinkedList(list);
 
 // 循环输出链表
-function printReverseLinkedList2 (list) {
+function printReverseLinkedList2(list) {
     let arr = [];
     let tmp = list;
     while (tmp) {
@@ -79,7 +79,7 @@ function printReverseLinkedList2 (list) {
     for (let i = arr.length - 1; i >= 0; i--) {
         console.log(arr[i]);
     }
-}
+} */
 // console.log('循环输出链表');
 // printReverseLinkedList2(list);
 
@@ -103,10 +103,10 @@ console.log(obj === obj_copy);
 console.log(JSON.stringify(obj)); */
 
 // 变量作用域，闭包
-{
+/* {
     let message = 'window';
     console.log(message);
-}
+} */
 // console.log(message); // ReferenceError: message is not defined
 
 //  for 构造在这里很特殊：在其中声明的变量被视为块的一部分。
@@ -122,7 +122,7 @@ console.log(JSON.stringify(obj)); */
     console.log('Bye, ' + getFullName());
 }
 sayHiBye('John', 'Smith'); */
-function makeCounter() {
+/* function makeCounter() {
     let count = 0;
 
     return function () {
@@ -147,4 +147,13 @@ function f() {
 }
 
 let g = f();
-g();
+g(); */
+
+// setTimeout & setInterval
+// setTimeout()
+let timerID = setTimeout(() => console.log('Hello'), 1000);
+function sayHi (name) {
+    console.log(`Hello, ${name}`);
+}
+
+setTimeout(sayHi, 1000, 'John'); // Hello, John
