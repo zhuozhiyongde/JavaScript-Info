@@ -29,7 +29,7 @@ rabbit.walk = function () {
 rabbit.walk(); */
 
 // 访问器属性是例外，赋值操作由setter函数处理，写入时，如果对象本身没有该属性，就会使用原型的属性
-let user = {
+/* let user = {
     name: 'John',
     surname: 'Smith',
 
@@ -50,7 +50,7 @@ console.log(admin.fullName);
 admin.fullName = 'Alice Cooper';
 console.log(admin.fullName);
 console.log(admin.name);
-console.log(user.fullName);
+console.log(user.fullName); */
 
 // this的值取决于调用的上下文，始终是"."左边的对象
 // admin.fullName实际上是admin做this
@@ -59,3 +59,24 @@ console.log(user.fullName);
 
 // for in 循环会迭代继承的属性
 // 只想迭代自己的属性时，可以用obj.hasOwnProperty(key)来做判断，这个方法是从原型继承来的，是不可枚举的
+
+// 2.F-prototype
+
+// Rabbit.prototype = animal
+// it means when construct a new Rabbit, set its [[Prototype]] to animal
+
+// Rabbit class' prototype = animal === Rabbit class' instance's [[Prototype]] = animal
+// default: a function's prototype = itself
+
+// to ensure the correct constructor, we can add/delete attribute to default constructor, instead of to substitute to entire constructor.
+function Rabbit() {}
+Rabbit.prototype = {
+    eats: true,
+};
+
+let rabbit = new Rabbit();
+
+// Rabbit.prototype.eats = false;
+delete Rabbit.prototype.eats;
+
+console.log(rabbit.eats); // true
