@@ -69,7 +69,7 @@ console.log(user.fullName); */
 // default: a function's prototype = itself
 
 // to ensure the correct constructor, we can add/delete attribute to default constructor, instead of to substitute to entire constructor.
-function Rabbit() {}
+/* function Rabbit() {}
 Rabbit.prototype = {
     eats: true,
 };
@@ -80,3 +80,27 @@ let rabbit = new Rabbit();
 delete Rabbit.prototype.eats;
 
 console.log(rabbit.eats); // true
+ */
+
+// 从原型中借用
+/* let obj = {
+    0: 'Hello',
+    1: 'world',
+    length: 2,
+};
+
+obj.join = Array.prototype.join;
+console.log(obj.join(',')); */
+
+// 许多内建方法不会检查对象是否为真的数组，而是使用通用算法，它们可以处理类似数组的对象
+
+/* function f() {
+    console.log('Hello!');
+}
+Function.prototype.defer = function (ms) {
+    let f = this;
+    return function (...args) {
+        setTimeout(() => f.apply(this, args), ms);
+    };
+};
+f.defer(1000)(); // 1 秒后显示 "Hello!" */
